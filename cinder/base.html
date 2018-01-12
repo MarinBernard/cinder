@@ -11,7 +11,9 @@
     <link rel="shortcut icon" href="{{ base_url }}/{{ favicon }}">{% else %}
     <link rel="shortcut icon" href="{{ base_url }}/img/favicon.ico">{% endif %}
 
-    <title>{% if page_title %}{{ page_title }} - {% endif %}{{ site_name }}</title>
+    {%- block htmltitle %}
+        <title>{% if page and page.title and not page.is_homepage %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+    {%- endblock %}
 
     <link href="{{ base_url }}/css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -122,9 +124,3 @@
     </body>
 
 </html>
-{% if current_page and current_page.is_homepage %}
-<!--
-MkDocs version : {{ mkdocs_version }}
-Build Date UTC : {{ build_date_utc }}
--->
-{% endif %}
