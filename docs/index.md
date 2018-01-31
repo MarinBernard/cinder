@@ -165,6 +165,21 @@ pages:
   - Home: index.md
   - About: about.md</code></pre>
 
+## Advanced theme features
+
+### Disable highlight.js integration
+
+The theme embeds an integrated version of the
+[highlight.js](https://highlightjs.org) syntax highlighting library, which
+is enabled by default. This library may conflict with other extensions, such
+as the [mermaid](https://mermaidjs.github.io/) diagram generator. In such cases,
+you may want to disable embedded highligh.js. To do so, just add the following
+theme setting to your `mkdocs.yml` file:
+
+<pre><code class="yaml">theme:
+  feature:
+    - highlight_js: no</pre>
+
 ### Github or Bitbucket Repository Link
 
 Include the `repo_url` field and define it with your repository URL:
