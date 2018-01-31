@@ -1,1 +1,3 @@
 site_author: Samuel Razzell
+feature:
+  - highlight_js: yes
